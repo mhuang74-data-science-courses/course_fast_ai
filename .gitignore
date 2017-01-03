@@ -1,0 +1,7 @@
+*.jpg
+*.csv
+*.zip
+.ipynb_checkpoints
+downloads/*
+data/*
+*.pyc
