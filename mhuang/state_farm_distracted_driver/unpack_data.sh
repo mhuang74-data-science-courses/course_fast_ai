@@ -4,7 +4,12 @@ mkdir data
 cd data
 unzip -q ~/downloads/data/kaggle_state_farm_distracted_driver/imgs.zip
 
+# data unpacts into 'train' directory, which we will separate images from drivers into 'valid' directory
+rm -rf valid
+
+# now copy a subset of 'train', 'valid' and 'test' into sample directory
 rm -rf sample
+
 
 # sample/train
 mkdir -p sample/train/c0
