@@ -2,7 +2,6 @@
 # this script mv files from 'train' to create 'valid' directory
 # this script also cp subset of files from 'train' and 'valid' directories to create 'sample' directory
 KAGGLE_DATA_PATH="$HOME/downloads/data/kaggle_dogs_cats_kennel"
-rm -r data
 mkdir data
 cd data
 unzip -q $KAGGLE_DATA_PATH/train.zip
