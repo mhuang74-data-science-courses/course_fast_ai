@@ -4,4 +4,9 @@
 .ipynb_checkpoints
 downloads/*
 data/*
+models/*
 *.pyc
+data
+models
+*.tar.gz
+*.gz
