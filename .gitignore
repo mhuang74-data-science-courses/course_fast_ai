@@ -10,3 +10,4 @@ data
 models
 *.tar.gz
 *.gz
+*.h5

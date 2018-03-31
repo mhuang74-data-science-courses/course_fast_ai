@@ -4,7 +4,7 @@ KAGGLE_DATA_PATH="$HOME/downloads/data/kaggle_state_farm_distracted_driver"
 mkdir -p data data/models
 cd data
 
-unzip -q $KAGGLE_DATA_PATH/imgs.zip
+unzip -q -n $KAGGLE_DATA_PATH/imgs.zip
 
 ##### fix up TEST directory #####
 cd test
@@ -42,9 +42,9 @@ rm -rf sample
 mkdir -p sample sample/models
 
 # train
-find train -name "*.jpg" | shuf -n500 | xargs cp -p --parent -t sample 
+find train -name "*.jpg" | shuf -n750 | xargs cp -p --parent -t sample 
 # valid
-find valid -name "*.jpg" | shuf -n100 | xargs cp -p --parent -t sample 
+find valid -name "*.jpg" | shuf -n250 | xargs cp -p --parent -t sample 
 # test
 find test -name "*.jpg" | shuf -n25 | xargs cp -p --parent -t sample 
 
