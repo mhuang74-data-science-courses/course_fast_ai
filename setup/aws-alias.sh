@@ -7,7 +7,7 @@ alias aws-big='aws ec2 modify-instance-attribute --instance-id $instanceId --ins
 ## once instance found and configured, ready to start and go
 alias aws-start='aws ec2 start-instances --instance-ids $instanceId && aws ec2 wait instance-running --instance-ids $instanceId && export instanceIp=`aws ec2 describe-instances --filters "Name=instance-id,Values=$instanceId" --query "Reservations[0].Instances[0].PublicIpAddress"` && echo $instanceIp'
 alias aws-ip='export instanceIp=`aws ec2 describe-instances --filters "Name=instance-id,Values=$instanceId" --query "Reservations[0].Instances[0].PublicIpAddress"` && echo $instanceIp'
-alias aws-ssh='ssh -i ~/.ssh/aws-key.pem ubuntu@$instanceIp'
+alias aws-ssh='ssh -i ~/.ssh/aws-key.pem -L 127.0.0.1:8888:$instanceIp:8888 -L 127.0.0.1:8889:$instanceIp:8889 ubuntu@$instanceIp'
 alias aws-stop='aws ec2 stop-instances --instance-ids $instanceId'
 ## Deprecated
 # alias aws-pre-start='export allocationId=$(aws ec2 allocate-address --domain vpc | awk "{print \$1}") && echo $allocationId && export associationId=$(aws ec2 associate-address --allocation-id $allocationId --instance-id $instanceId) && echo $associationId && export instanceIp=$(aws ec2 describe-addresses --public-ips --filters "Name=instance-id,Values=$instanceId" | awk "{print \$9}") && echo $instanceIp'
